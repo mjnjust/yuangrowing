@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
 
-    @Reference
+    @Reference(loadbalance = "test")
     private ITestFacade testFacade ;
 
     @RequestMapping("/test.do")

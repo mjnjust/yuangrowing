@@ -7,7 +7,6 @@ import org.apache.dubbo.rpc.Invoker;
 import org.apache.dubbo.rpc.Protocol;
 import org.apache.dubbo.rpc.RpcException;
 
-@SPI("myprotocol")
 public class MyProtocol implements Protocol {
 
     public MyProtocol(){

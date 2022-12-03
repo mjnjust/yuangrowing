@@ -8,6 +8,8 @@ dubbo:
     #协议名称
     name: dubbo
     #服务暴露端口
-    port: 20880
+    port: -1
   scan:
     base-packages: com.mj.learn.dubbo.provider # 接口实现类的包名
+server:
+  port: 8082

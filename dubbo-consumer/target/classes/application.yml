@@ -9,5 +9,7 @@ dubbo:
     name: dubbo
     #服务暴露端口
     port: 20881
+  consumer:
+    check: false
 server:
   port: 8081
