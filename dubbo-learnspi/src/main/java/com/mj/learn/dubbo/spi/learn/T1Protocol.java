@@ -1,17 +1,16 @@
 package com.mj.learn.dubbo.spi.learn;
 
 import org.apache.dubbo.common.URL;
-import org.apache.dubbo.common.extension.SPI;
 import org.apache.dubbo.rpc.Exporter;
 import org.apache.dubbo.rpc.Invoker;
 import org.apache.dubbo.rpc.Protocol;
 import org.apache.dubbo.rpc.RpcException;
 
-public class MyProtocol implements Protocol {
+public class T1Protocol implements Protocol {
 
-    private Protocol t1protocol;
+    private Protocol myprotocol;
 
-    public MyProtocol() {
+    public T1Protocol() {
         int a = 0;
     }
 
@@ -35,7 +34,7 @@ public class MyProtocol implements Protocol {
 
     }
 
-    public void setT1protocol(Protocol t1protocol) {
-        this.t1protocol = t1protocol;
+    public void setMyprotocol(Protocol myprotocol) {
+        this.myprotocol = myprotocol;
     }
 }

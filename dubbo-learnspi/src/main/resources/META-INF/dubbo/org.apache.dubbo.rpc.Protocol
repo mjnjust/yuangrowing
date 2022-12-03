@@ -1,1 +1,2 @@
 myprotocol=com.mj.learn.dubbo.spi.learn.MyProtocol
+t1protocol=com.mj.learn.dubbo.spi.learn.T1Protocol

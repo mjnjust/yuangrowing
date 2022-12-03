@@ -9,6 +9,7 @@
         <module>dubbo-consumer</module>
         <module>dubbo-simulate</module>
         <module>dubbo-learnspi</module>
+        <module>dubbo-netty</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

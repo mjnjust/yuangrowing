@@ -1,31 +1,28 @@
 package com.mj.learn.dubbo.consumer.dubbo;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.Invocation;
 import org.apache.dubbo.rpc.Invoker;
+import org.apache.dubbo.rpc.cluster.LoadBalance;
 import org.apache.dubbo.rpc.cluster.loadbalance.AbstractLoadBalance;
 
 import java.util.List;
 
-public class TestLoadblance extends AbstractLoadBalance {
+public class Test1Loadblance extends AbstractLoadBalance {
 
-    private DiTest diTest;
+    private LoadBalance test2Loadblance;
 
-
-
-    public TestLoadblance() {
+    public Test1Loadblance() {
         int a = 1010;
     }
 
     @Override
     protected <T> Invoker<T> doSelect(List<Invoker<T>> list, URL url, Invocation invocation) {
-        diTest.ditest();
+        System.out.println("test1 loadblance");
         return list.get(0);
     }
 
-    public void setDiTest(DiTest diTest) {
-        this.diTest = diTest;
+    public void setTest2Loadblance(LoadBalance test2Loadblance) {
+        this.test2Loadblance = test2Loadblance;
     }
 }
