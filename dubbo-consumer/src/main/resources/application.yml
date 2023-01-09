@@ -1,15 +1,19 @@
 dubbo:
   application:
-    name: dubbo-producer  #dubbo的注册的服务名, 唯一性
+    name: dubbo-consumer  #dubbo的注册的服务名, 唯一性
     version: 1.0.0  # 服务提供的版本
   registry:
-    address: zookeeper://49.234.61.67:2181  # 注册中心的地址
+    address: zookeeper://117.62.217.89:2181  # 注册中心的地址
+    timeout: 100000
   protocol:
     #协议名称
     name: dubbo
     #服务暴露端口
-    port: 20881
+    port: -1
+  config-center:
+    timeout: 60000
   consumer:
     check: false
+    timeout: 60000
 server:
   port: 8081

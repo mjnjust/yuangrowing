@@ -1,7 +1,5 @@
 package com.mj.learn.dubbo.consumer.dubbo;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.Invocation;
 import org.apache.dubbo.rpc.Invoker;
@@ -12,8 +10,6 @@ import java.util.List;
 public class TestLoadblance extends AbstractLoadBalance {
 
     private DiTest diTest;
-
-
 
     public TestLoadblance() {
         int a = 1010;
