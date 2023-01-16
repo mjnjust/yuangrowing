@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
 
+//    @Reference(protocol = "http")
     @Reference
     private ITestFacade testFacade ;
 

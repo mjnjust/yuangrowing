@@ -5,11 +5,16 @@ dubbo:
   registry:
     address: zookeeper://117.62.217.89:2181  # 注册中心的地址
     timeout: 100000
-  protocol:
-    #协议名称
-    name: dubbo
-    #服务暴露端口
-    port: -1
+  protocols:
+    dubbo:
+      #协议名称
+      name: dubbo
+      #服务暴露端口
+      port: -1
+#    http:
+#      name: http
+#      port: 8080
+#      server: jetty
   scan:
     base-packages: com.mj.learn.dubbo.provider # 接口实现类的包名
   config-center:
