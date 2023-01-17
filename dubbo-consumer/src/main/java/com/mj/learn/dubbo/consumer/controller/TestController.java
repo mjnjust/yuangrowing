@@ -15,13 +15,13 @@ public class TestController {
     /**
      * 通过http协议调用
      */
-    @Reference(protocol = "http")
+    @Reference(protocol = "http" , check = false)
     private ITestFacade httpFacade;
 
     /**
      * 通过dubbo协议调用
      */
-    @Reference(protocol = "dubbo")
+    @Reference(protocol = "dubbo" , check = false)
     private ITestFacade dubboFacade;
 
     @RequestMapping("/test.do")
@@ -31,7 +31,7 @@ public class TestController {
         return "testOk";
     }
 
-    @Reference(protocol = "redis")
+    @Reference(protocol = "redis" , check = false)
     private Icache icache;
 
     /**
