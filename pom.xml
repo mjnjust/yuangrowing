@@ -10,7 +10,7 @@
         <module>dubbo-simulate</module>
         <module>dubbo-learnspi</module>
         <module>dubbo-netty</module>
-        <module>dubbo-learnzookeeper</module>
+        <module>dubbo-learnzk</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

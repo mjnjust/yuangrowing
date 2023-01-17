@@ -1,4 +1,4 @@
-package com.mj.learn.dubbo.learnzookeeper;
+package com.mj.learn.dubbo.learnzk;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
