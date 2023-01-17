@@ -5,11 +5,6 @@ dubbo:
   registry:
     address: zookeeper://117.62.217.89:2181  # 注册中心的地址
     timeout: 100000
-  protocol:
-    #协议名称
-    name: dubbo
-    #服务暴露端口
-    port: -1
   config-center:
     timeout: 60000
   consumer:

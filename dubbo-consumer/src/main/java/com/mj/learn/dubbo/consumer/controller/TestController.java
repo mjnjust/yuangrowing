@@ -1,6 +1,7 @@
 package com.mj.learn.dubbo.consumer.controller;
 
 import com.mj.learn.dubbo.api.ITestFacade;
+import com.mj.learn.dubbo.api.Icache;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,12 +10,39 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
 
-//    @Reference(protocol = "http")
-    @Reference
-    private ITestFacade testFacade ;
+    private volatile boolean redisRegister = false;
+
+    /**
+     * 通过http协议调用
+     */
+    @Reference(protocol = "http")
+    private ITestFacade httpFacade;
+
+    /**
+     * 通过dubbo协议调用
+     */
+    @Reference(protocol = "dubbo")
+    private ITestFacade dubboFacade;
 
     @RequestMapping("/test.do")
     public String test() {
-        return testFacade.test();
+        System.out.println(httpFacade.test());
+        System.out.println(dubboFacade.test());
+        return "testOk";
+    }
+
+    @Reference(protocol = "redis")
+    private Icache icache;
+
+    /**
+     * redis协议的使用
+     *
+     * @return
+     */
+    @RequestMapping("/redis_test.do")
+    public String redisProtocolTest() {
+        icache.set("a", String.valueOf(System.currentTimeMillis()));
+        System.out.println(icache.get("a"));
+        return "redis test ok";
     }
 }

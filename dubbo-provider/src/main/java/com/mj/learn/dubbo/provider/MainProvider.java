@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @EnableDubbo
-public class MainProvider2 {
+public class MainProvider {
     public static void main(String[] args) {
-        SpringApplication.run(MainProvider2.class);
+        SpringApplication.run(MainProvider.class);
     }
 }
