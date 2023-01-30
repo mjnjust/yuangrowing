@@ -1,4 +1,4 @@
-package com.mj.learn.dubbo.simulate.api;
+package com.mj.learn.jvm.classloader;
 
 public interface IAsc {
     public void action();
