@@ -3,6 +3,7 @@ package com.mj.learn.dubbo.consumer.controller;
 import com.mj.learn.dubbo.api.ITestFacade;
 import com.mj.learn.dubbo.api.Icache;
 import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.rpc.RpcContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,13 +16,13 @@ public class TestController {
     /**
      * 通过http协议调用
      */
-    @Reference(protocol = "http" , check = false)
+    @Reference(protocol = "http", check = false)
     private ITestFacade httpFacade;
 
     /**
      * 通过dubbo协议调用
      */
-    @Reference(protocol = "dubbo" , check = false)
+    @Reference(protocol = "dubbo", check = false)
     private ITestFacade dubboFacade;
 
     @RequestMapping("/test.do")
@@ -31,7 +32,14 @@ public class TestController {
         return "testOk";
     }
 
-    @Reference(protocol = "redis" , check = false)
+    @RequestMapping("/test2.do")
+    public String test2() {
+        RpcContext.getContext().setAttachment("hello", String.valueOf(System.currentTimeMillis()));
+        System.out.println(dubboFacade.test());
+        return "testOk";
+    }
+
+    @Reference(protocol = "redis", check = false)
     private Icache icache;
 
     /**
